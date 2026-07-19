@@ -8,7 +8,7 @@ const SITE = {
 
   product: {
     name: "PcCleaner",
-    version: "1.0.0",
+    version: "1.1.0",
     releaseDate: "2026-07-19",
     // Swap for the real hosted installer URL (e.g. a GitHub Release asset or CDN link).
     downloadUrl: "https://github.com/raicea/PcCleaner/releases/latest/download/PcCleaner-Setup.exe",
