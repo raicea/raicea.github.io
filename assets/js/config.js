@@ -23,18 +23,19 @@ const SITE = {
     }
   },
 
-  // Placeholder checkout targets — point these at Stripe/Paddle/Lemon Squeezy
-  // Payment Links (or your own checkout session endpoint) when ready. Every "Buy Pro"
-  // button on the site reads from here, so switching providers is a one-file change.
+  // Every "Buy Pro" button on the site reads from here, so switching providers/links is a
+  // one-file change. Right now there's only one real Stripe product — a lifetime purchase —
+  // so all three URLs point at the same Payment Link; the monthly/yearly toggle on pricing.html
+  // is display-only until separate subscription Prices exist in Stripe.
   checkout: {
-    provider: "none", // "stripe" | "paddle" | "lemonsqueezy"
+    provider: "stripe",
     currency: "EUR",
     currencySymbol: "€",
     priceMonthly: 2.99,
     priceYearly: 2.39, // ~20% off monthly, matches the "Save 20%" badge on pricing.html
-    proMonthlyUrl: "#",
-    proYearlyUrl: "#",
-    proLifetimeUrl: "#"
+    proMonthlyUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00",
+    proYearlyUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00",
+    proLifetimeUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00"
   },
 
   // Placeholder endpoints for the future account/dashboard system — not implemented yet,
