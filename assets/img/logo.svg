@@ -1,0 +1,44 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plate" x1="20" y1="10" x2="236" y2="246" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d0f14"/>
+      <stop offset="1" stop-color="#05060a"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="60" y1="60" x2="180" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6fa6ff"/>
+      <stop offset="0.55" stop-color="#3b7cff"/>
+      <stop offset="1" stop-color="#1a3fc4"/>
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="150" y1="60" x2="240" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.6" stop-color="#e7ebf2"/>
+      <stop offset="1" stop-color="#b7c0d1"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Angled dark plate for favicon legibility on any browser chrome -->
+  <path d="M 34 4 L 222 4 L 252 34 L 252 222 L 222 252 L 34 252 L 4 222 L 4 34 Z" fill="url(#plate)"/>
+  <path d="M 34 4 L 222 4 L 252 34 L 252 222 L 222 252 L 34 252 L 4 222 L 4 34 Z" fill="none" stroke="#3b7cff" stroke-opacity="0.35" stroke-width="2"/>
+
+  <g filter="url(#softShadow)">
+    <!-- Sliced "P" — blue, italic-skewed blocky construction -->
+    <g transform="skewX(-13)" fill="url(#blueGrad)">
+      <rect x="66" y="76" width="21" height="112" rx="2"/>
+      <rect x="66" y="76" width="76" height="21" rx="2"/>
+      <rect x="121" y="76" width="21" height="50" rx="2"/>
+      <rect x="66" y="105" width="76" height="21" rx="2"/>
+    </g>
+
+    <!-- Sliced "S" — white/silver, italic-skewed blocky construction -->
+    <g transform="skewX(-13)" fill="url(#silverGrad)">
+      <rect x="150" y="76" width="68" height="21" rx="2"/>
+      <rect x="150" y="76" width="21" height="56" rx="2"/>
+      <rect x="150" y="132" width="68" height="21" rx="2"/>
+      <rect x="197" y="132" width="21" height="58" rx="2"/>
+      <rect x="150" y="169" width="68" height="21" rx="2"/>
+    </g>
+  </g>
+</svg>

@@ -137,6 +137,8 @@
     document.querySelectorAll("[data-buy='lifetime']").forEach((el) => el.setAttribute("href", SITE.checkout.proLifetimeUrl));
     document.querySelectorAll("[data-bug-report]").forEach((el) => el.setAttribute("href", SITE.contact.bugReportUrl));
     document.querySelectorAll("[data-feature-request]").forEach((el) => el.setAttribute("href", SITE.contact.featureRequestUrl));
+    document.querySelectorAll("[data-github]").forEach((el) => el.setAttribute("href", SITE.contact.githubUrl));
+    document.querySelectorAll("[data-discord]").forEach((el) => el.setAttribute("href", SITE.contact.discordUrl));
     document.querySelectorAll("[data-support-email]").forEach((el) => {
       el.setAttribute("href", "mailto:" + SITE.contact.supportEmail);
       if (el.dataset.supportEmail === "text") el.textContent = SITE.contact.supportEmail;

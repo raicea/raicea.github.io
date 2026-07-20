@@ -4,7 +4,7 @@
  * touching markup across every page.
  */
 const SITE = {
-  brand: "Raicea Software",
+  brand: "PCSoftware",
 
   product: {
     name: "PcCleaner",
@@ -38,15 +38,6 @@ const SITE = {
     proLifetimeUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00"
   },
 
-  // Placeholder endpoints for the future account/dashboard system — not implemented yet,
-  // kept here so the buttons that will trigger them already exist in markup.
-  accounts: {
-    loginUrl: "#",
-    signupUrl: "#",
-    dashboardUrl: "#",
-    activateLicenseUrl: "#"
-  },
-
   contact: {
     supportEmail: "support.raicea@gmail.com",
     // GitHub Issues cannot be used here: creating an issue always requires a signed-in GitHub
@@ -55,6 +46,9 @@ const SITE = {
     // of any kind required. (The public issue *list*, i.e. no "/new", is fine without login —
     // just not issue *creation*.)
     bugReportUrl: "mailto:support.raicea@gmail.com?subject=" + encodeURIComponent("Bug report — PcCleaner"),
-    featureRequestUrl: "mailto:support.raicea@gmail.com?subject=" + encodeURIComponent("Feature request — PcCleaner")
+    featureRequestUrl: "mailto:support.raicea@gmail.com?subject=" + encodeURIComponent("Feature request — PcCleaner"),
+    githubUrl: "https://github.com/raicea/PcCleaner",
+    // No Discord server exists yet — placeholder until one is created.
+    discordUrl: "#"
   }
 };
