@@ -132,9 +132,7 @@
     document.querySelectorAll("[data-download]").forEach((el) => {
       el.setAttribute("href", SITE.product.downloadUrl);
     });
-    document.querySelectorAll("[data-buy='monthly']").forEach((el) => el.setAttribute("href", SITE.checkout.proMonthlyUrl));
     document.querySelectorAll("[data-buy='yearly']").forEach((el) => el.setAttribute("href", SITE.checkout.proYearlyUrl));
-    document.querySelectorAll("[data-buy='lifetime']").forEach((el) => el.setAttribute("href", SITE.checkout.proLifetimeUrl));
     document.querySelectorAll("[data-bug-report]").forEach((el) => el.setAttribute("href", SITE.contact.bugReportUrl));
     document.querySelectorAll("[data-feature-request]").forEach((el) => el.setAttribute("href", SITE.contact.featureRequestUrl));
     document.querySelectorAll("[data-github]").forEach((el) => el.setAttribute("href", SITE.contact.githubUrl));
@@ -145,11 +143,8 @@
     });
     document.querySelectorAll("[data-version]").forEach((el) => (el.textContent = SITE.product.version));
     document.querySelectorAll("[data-size]").forEach((el) => (el.textContent = SITE.product.sizeMb + " MB"));
-    document.querySelectorAll("[data-price-monthly]").forEach((el) => {
-      el.textContent = SITE.checkout.currencySymbol + SITE.checkout.priceMonthly.toFixed(2);
-    });
     document.querySelectorAll("[data-price-yearly]").forEach((el) => {
-      el.textContent = SITE.checkout.currencySymbol + SITE.checkout.priceYearly.toFixed(2);
+      el.textContent = SITE.checkout.currencySymbol + SITE.checkout.priceYearly;
     });
   }
 })();

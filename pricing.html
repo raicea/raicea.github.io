@@ -19,15 +19,6 @@
 <meta name="twitter:description" content="PcCleaner pricing: Free, Pro, and what's coming next.">
 <meta name="twitter:image" content="https://raicea.github.io/raicea-software.io/assets/img/og-image.png">
 <link rel="stylesheet" href="assets/css/main.css">
-<style>
-  .toggle-wrap { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:48px; }
-  .toggle-switch { position:relative; width:52px; height:28px; background:var(--surface-2); border:1px solid var(--border); border-radius:999px; cursor:pointer; }
-  .toggle-switch .knob { position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg, var(--blue), var(--silver)); transition:transform 0.25s var(--ease); }
-  .toggle-switch.on .knob { transform:translateX(24px); }
-  .toggle-label { font-size:14px; color:var(--muted); }
-  .toggle-label.active { color:var(--text); font-weight:600; }
-  .save-badge { font-size:11px; font-weight:700; color:var(--blue); background:rgba(var(--blue-rgb),.14); padding:3px 10px; border-radius:999px; }
-</style>
 </head>
 <body>
 <div class="bg-field"><div class="blob"></div></div>
@@ -62,13 +53,6 @@
 
   <section style="padding-top:0;">
     <div class="container">
-      <div class="toggle-wrap reveal in-view">
-        <span class="toggle-label active" id="labelMonthly">Monthly</span>
-        <div class="toggle-switch" id="billingToggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
-        <span class="toggle-label" id="labelYearly">Yearly</span>
-        <span class="save-badge">Save 20%</span>
-      </div>
-
       <div class="grid cols-3 reveal-stagger">
 
         <div class="glass-card pricing-card reveal" style="--i:0">
@@ -91,8 +75,8 @@
         <div class="glass-card pricing-card featured reveal" style="--i:1">
           <span class="badge">Most popular</span>
           <h3>Pro</h3>
-          <div class="price"><span class="price-monthly" data-price-monthly>€2.99</span><span class="price-yearly" data-price-yearly style="display:none;">€2.39</span><span> / month</span></div>
-          <div class="desc">For people who want it fully automated and hands-off.</div>
+          <div class="price"><span data-price-yearly>€10</span><span> / year</span></div>
+          <div class="desc">For people who want it fully automated and hands-off. Billed annually.</div>
           <ul>
             <li><span class="check">✓</span> Everything in Free</li>
             <li><span class="check">✓</span> Memory Optimizer</li>
@@ -102,7 +86,7 @@
             <li><span class="check">✓</span> PDF report history &amp; exports</li>
             <li><span class="check">✓</span> Priority email support</li>
           </ul>
-          <a href="#" class="btn btn-primary btn-block buy-link" data-buy="monthly">Buy Pro</a>
+          <a href="#" class="btn btn-primary btn-block" data-buy="yearly">Buy Pro</a>
         </div>
 
         <div class="glass-card pricing-card reveal" style="--i:2;opacity:0.7;">
@@ -151,7 +135,7 @@
       <div class="reveal">
         <div class="faq-item">
           <button class="faq-q">Can I cancel anytime? <span class="plus">+</span></button>
-          <div class="faq-a"><p>Yes. Pro is billed monthly or yearly with no long-term contract — cancel whenever you like.</p></div>
+          <div class="faq-a"><p>Yes. Pro is billed annually with no long-term contract — cancel whenever you like.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Is there a free trial of Pro? <span class="plus">+</span></button>
@@ -217,29 +201,5 @@
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  (function () {
-    const toggle = document.getElementById("billingToggle");
-    const labelM = document.getElementById("labelMonthly");
-    const labelY = document.getElementById("labelYearly");
-    const priceM = document.querySelector(".price-monthly");
-    const priceY = document.querySelector(".price-yearly");
-    const buyLink = document.querySelector(".buy-link");
-    function setYearly(on) {
-      toggle.classList.toggle("on", on);
-      toggle.setAttribute("aria-checked", String(on));
-      labelM.classList.toggle("active", !on);
-      labelY.classList.toggle("active", on);
-      priceM.style.display = on ? "none" : "inline";
-      priceY.style.display = on ? "inline" : "none";
-      if (buyLink) buyLink.dataset.buy = on ? "yearly" : "monthly";
-      if (typeof SITE !== "undefined" && buyLink) {
-        buyLink.setAttribute("href", on ? SITE.checkout.proYearlyUrl : SITE.checkout.proMonthlyUrl);
-      }
-    }
-    toggle.addEventListener("click", () => setYearly(!toggle.classList.contains("on")));
-    toggle.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setYearly(!toggle.classList.contains("on")); } });
-  })();
-</script>
 </body>
 </html>

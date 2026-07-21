@@ -24,18 +24,14 @@ const SITE = {
   },
 
   // Every "Buy Pro" button on the site reads from here, so switching providers/links is a
-  // one-file change. Right now there's only one real Stripe product — a lifetime purchase —
-  // so all three URLs point at the same Payment Link; the monthly/yearly toggle on pricing.html
-  // is display-only until separate subscription Prices exist in Stripe.
+  // one-file change. PCSoftware Pro is sold as a single annual plan through one Stripe
+  // Live Mode Payment Link.
   checkout: {
     provider: "stripe",
     currency: "EUR",
     currencySymbol: "€",
-    priceMonthly: 2.99,
-    priceYearly: 2.39, // ~20% off monthly, matches the "Save 20%" badge on pricing.html
-    proMonthlyUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00",
-    proYearlyUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00",
-    proLifetimeUrl: "https://buy.stripe.com/test_3cI7sN9924kbcQ44k9enS00"
+    priceYearly: 10,
+    proYearlyUrl: "https://buy.stripe.com/28EaEZad6eYPcQ4cQFenS01"
   },
 
   contact: {
